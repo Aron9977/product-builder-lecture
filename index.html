@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guestbook</title>
+    <title>Gemini Good Words</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
-        <h1>Guestbook</h1>
-        <form id="guestbook-form">
-            <input type="text" id="message-input" placeholder="Write a message..." required>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="message-container"></div>
+        <div class="header">
+            <span class="badge">Powered by Gemini 3.1</span>
+            <h1>Good Words</h1>
+            <p class="subtitle">Receive a positive message from AI to brighten your day.</p>
+        </div>
+        
+        <div class="action-area">
+            <button id="generate-btn" class="main-btn">✨ Get a Good Word</button>
+        </div>
+
+        <div id="message-display" class="message-display hidden">
+            <div id="loading-spinner" class="spinner hidden"></div>
+            <div id="message-content"></div>
+        </div>
+
+        <div id="history-container" class="history-container">
+            <!-- Previous messages will appear here -->
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
