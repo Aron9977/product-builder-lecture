@@ -1,52 +1,117 @@
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: white;
+    --text-color: #333;
+    --input-bg: white;
+    --input-border: #ccc;
+    --entry-bg: #f9f9f9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --input-bg: #2d2d2d;
+    --input-border: #444;
+    --entry-bg: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     text-align: center;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    background-color: var(--container-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    width: 90%;
     max-width: 600px;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: 2px solid var(--input-border);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: none;
+}
+
+.theme-toggle:hover {
+    background-color: var(--input-border);
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: 700;
 }
 
 #guestbook-form {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
 }
 
 #message-input {
     flex-grow: 1;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
     font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#message-input:focus {
+    border-color: var(--primary-color);
 }
 
 button {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 #message-container {
@@ -55,9 +120,15 @@ button:hover {
 
 guestbook-entry {
     display: block;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 5px;
+    background-color: var(--entry-bg);
+    padding: 1.2rem;
+    border-radius: 10px;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid var(--input-border);
+}
+
+guestbook-entry:hover {
+    transform: scale(1.01);
 }

@@ -15,6 +15,22 @@ customElements.define('guestbook-entry', GuestbookEntry);
 const form = document.getElementById('guestbook-form');
 const messageContainer = document.getElementById('message-container');
 const messageInput = document.getElementById('message-input');
+const themeToggle = document.getElementById('theme-toggle');
+
+// Theme Logic
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    let theme = 'light';
+    if (document.body.classList.contains('dark-theme')) {
+        theme = 'dark';
+    }
+    localStorage.setItem('theme', theme);
+});
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();

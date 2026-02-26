@@ -2,30 +2,42 @@
 
 ## Overview
 
-This project is a simple guestbook web application. Users can submit messages which are then displayed on the page. It is built using HTML, CSS, and JavaScript, and it leverages modern web standards like Web Components for modularity.
+This project is a modern, responsive guestbook web application with support for light and dark modes. It allows users to submit messages and persists their theme preferences across sessions. Built with pure HTML, CSS, and JavaScript using modern Web Components.
 
 ## Project Outline
 
 ### Design and Style
-*   **Layout:** A centered layout with a heading, an input form, and a list of submitted messages.
-*   **Color Palette:** A clean and modern color scheme with a focus on readability.
-*   **Typography:** Clear and legible fonts.
-*   **Effects:** Subtle shadow effects on the input form, button, and message entries to create a sense of depth.
+*   **Layout:** Centered, responsive container with a modern, clean aesthetic.
+*   **Theming:** Supports both Light and Dark modes using CSS variables for consistent styling.
+*   **Typography:** Uses system-ui fonts for a native feel and high readability.
+*   **Interactive Elements:** Smooth transitions for theme switching, hover effects on buttons, and elevated card styles for message entries.
 
 ### Features
-*   **Guestbook Form:** An input field and a button for users to submit their messages.
-*   **Message Display:** Submitted messages are displayed in a list.
-*   **Web Components:** Each message in the guestbook is a Web Component (`<guestbook-entry>`) for encapsulation and reusability.
+*   **Theme Toggle:** A dedicated button to switch between light and dark modes.
+*   **Theme Persistence:** Uses `localStorage` to remember the user's preferred theme.
+*   **Guestbook Form:** Real-time message submission with immediate UI updates.
+*   **Encapsulated Components:** Custom `<guestbook-entry>` Web Component for displaying messages.
 
-## Current Plan
+## Implementation Details
 
-*   **Objective:** Add a guestbook feature to allow users to type and submit their own messages.
+### Theme Switcher
+*   **CSS Variables:** Defined in `:root` and overridden in `.dark-theme`.
+*   **Transition:** `body` has a `0.3s` transition on `background-color` and `color` for a smooth effect.
+*   **Logic:** JavaScript toggles the `.dark-theme` class and updates `localStorage`.
+
+### Guestbook Functionality
+*   **Web Components:** Uses Shadow DOM to encapsulate message styles (inherited via variables).
+*   **Event Handling:** Standard form submission prevention and dynamic element creation.
+
+## Current History & Plan
+
+### Initial Version
+*   Basic guestbook functionality with message submission.
+
+### Update: Theme Support
+*   **Objective:** Add Dark/Light mode toggle and persistence.
 *   **Steps:**
-    1.  **Modify `blueprint.md`:** Update the project overview and plan to reflect the new guestbook functionality.
-    2.  **Modify `index.html`:** Replace the quote display with a guestbook form (input field and submit button) and a container for the messages.
-    3.  **Modify `style.css`:** Add styles for the guestbook form, input field, submit button, and the list of messages.
-    4.  **Modify `main.js`:**
-        *   Remove the random quote generator logic.
-        *   Create a new Web Component (`<guestbook-entry>`) to display individual guestbook messages.
-        *   Add an event listener to the form to handle message submission.
-        *   When a message is submitted, create a new `<guestbook-entry>` element and append it to the message list.
+    1.  **Refactor CSS:** Move hardcoded colors to CSS variables and add `.dark-theme` definitions.
+    2.  **Add UI:** Include a `🌓` toggle button in `index.html`.
+    3.  **Implement Logic:** Add theme toggling and `localStorage` persistence in `main.js`.
+    4.  **Update Blueprint:** Document the new architectural changes.
