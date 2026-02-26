@@ -1,38 +1,38 @@
 # Blueprint
 
-## Overview
+## 개요
 
-This project is a "Gemini Good Words" generator. It provides users with inspirational and positive messages at the click of a button, powered by a simulated Gemini AI interface. It maintains the modern light/dark mode support and a clean, focused UI.
+이 프로젝트는 "Gemini 오늘의 좋은 말" 생성기입니다. 사용자가 버튼을 클릭하면 Gemini AI(시뮬레이션)가 전하는 영감을 주는 긍정적인 메시지를 제공합니다. 현대적인 다크/라이트 모드를 지원하며 깔끔하고 집중도 높은 UI를 유지합니다.
 
-## Project Outline
+## 프로젝트 개요
 
-### Design and Style
-*   **Layout:** A minimalist, centered "Hero" layout. The "Get a Good Word" button is the primary call to action.
-*   **Aesthetics:** Premium feel with subtle gradients, soft shadows, and smooth transitions.
-*   **Theming:** Full Dark/Light mode support with persistent user preferences.
+### 디자인 및 스타일
+*   **레이아웃:** 미니멀하고 중심이 잡힌 "히어로" 레이아웃. "좋은 말 받기" 버튼이 주요 행동 유도 요소입니다.
+*   **미학:** 미묘한 그라데이션, 부드러운 그림자, 매끄러운 전환 효과로 고급스러운 느낌을 줍니다.
+*   **테마:** 사용자 설정을 기억하는 다크/라이트 모드 완벽 지원.
 
-### Features
-*   **Gemini Good Word Generator:** A button that "requests" a positive message from Gemini.
-*   **Interactive UI:** Loading states and animations when fetching a new message.
-*   **Theme Toggle:** Persistent theme switching (Dark/Light).
-*   **Message History:** (Optional/Future) A list of previously received "Good Words".
+### 주요 기능
+*   **Gemini 좋은 말 생성기:** Gemini에게 긍정적인 메시지를 "요청"하는 버튼.
+*   **인터랙티브 UI:** 새 메시지를 가져올 때 로딩 상태 및 애니메이션 제공.
+*   **테마 토글:** 지속적인 테마 전환 (다크/라이트).
+*   **메시지 히스토리:** 이전에 받은 "좋은 말" 목록 표시.
 
-## Implementation Details
+## 구현 상세
 
-### Core Logic
-*   **Gemini Integration:** Currently simulated as a high-quality curated generator to represent "Gemini 3.1" capabilities in a frontend prototype.
-*   **State Management:** Handles loading states and dynamic DOM updates for the message display.
+### 핵심 로직
+*   **Gemini 통합:** 현재 프론트엔드 프로토타입에서 "Gemini 3.1"의 기능을 나타내기 위해 고품질의 큐레이션된 생성기로 시뮬레이션되었습니다.
+*   **상태 관리:** 메시지 표시를 위한 로딩 상태 및 동적 DOM 업데이트 처리.
 
-### Components
-*   **Action Button:** A large, inviting button with a "glow" effect in dark mode.
-*   **Message Card:** A beautifully styled container that displays the AI-generated message.
+### 컴포넌트
+*   **액션 버튼:** 다크 모드에서 "글로우" 효과가 있는 크고 매력적인 버튼.
+*   **메시지 카드:** AI가 생성한 메시지를 표시하는 아름답게 스타일링된 컨테이너.
 
-## Current History & Plan
+## 현재 히스토리 및 계획
 
-### Update: Gemini Good Word Feature
-*   **Objective:** Shift the focus from a guestbook to an AI-powered positive message generator.
-*   **Steps:**
-    1.  **Redesign UI:** Update `index.html` to center the button and message display.
-    2.  **Enhance Styles:** Add animations for the message appearing and loading indicators.
-    3.  **Update Script:** Implement the generator logic in `main.js`.
-    4.  **Deploy:** Commit and push all changes to the GitHub repository.
+### 업데이트: 한국어 지원 및 Gemini 좋은 말 기능
+*   **목표:** 애플리케이션의 모든 텍스트를 한국어로 번역하고 AI 기반 긍정 메시지 생성기에 집중하도록 UI를 개선합니다.
+*   **단계:**
+    1.  **UI 한글화:** `index.html`의 모든 텍스트를 한국어로 변경합니다.
+    2.  **데이터 한글화:** `main.js`의 `GOOD_WORDS` 목록을 한국어 메시지로 업데이트합니다.
+    3.  **문서화:** `blueprint.md`를 한국어로 업데이트하여 프로젝트의 현재 상태를 반영합니다.
+    4.  **배포:** 모든 변경 사항을 GitHub 저장소에 커밋하고 푸시합니다.
